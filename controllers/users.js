@@ -73,15 +73,8 @@ module.exports.login = (req, res, next) => {
 };
 
 // Выход с сайта
-module.exports.logout = (req, res, next) => {
-  User.findById(req.user._id)
-    .orFail(() => {
-      throw new NotFoundError(NOT_FOUND_ERROR_MESSAGE);
-    })
-    .then(() => {
-      res.clearCookie('jwt').send({ message: 'Вы покинули сайт' });
-    })
-    .catch(next);
+module.exports.logout = (req, res) => {
+  res.clearCookie('jwt').send({ message: 'Вы покинули сайт' });
 };
 
 module.exports.getUserInfo = (req, res, next) => {

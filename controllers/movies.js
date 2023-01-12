@@ -13,40 +13,13 @@ const NotFoundError = require('../middlewares/errors/not-found-error');
 
 module.exports.getMovies = (req, res, next) => {
   Movie.find({ owner: req.user._id })
-    .orFail(() => {
-      throw new NotFoundError(NOT_FOUND_ERROR_MESSAGE);
-    })
     .then((movies) => res.status(OK_STATUS).send(movies))
     .catch(next);
 };
 
 module.exports.createMovie = (req, res, next) => {
-  const {
-    country,
-    director,
-    duration,
-    year,
-    description,
-    image,
-    trailerLink,
-    nameRU,
-    nameEN,
-    thumbnail,
-    movieId,
-  } = req.body;
-
   Movie.create({
-    country,
-    director,
-    duration,
-    year,
-    description,
-    image,
-    trailerLink,
-    nameRU,
-    nameEN,
-    thumbnail,
-    movieId,
+    ...req.body,
     owner: req.user._id,
   })
     .then((movie) => res.status(CREATED_STATUS).send(movie))

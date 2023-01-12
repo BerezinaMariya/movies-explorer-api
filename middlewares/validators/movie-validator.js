@@ -32,11 +32,11 @@ module.exports.validateMovieData = celebrate({
     nameRU: strReq,
     // название фильма на английском языке. Обязательное поле-строка.
     nameEN: strReq,
-  }).unknown(true),
+  }),
 });
 
 module.exports.validateMovieId = celebrate({
   params: Joi.object().keys({
     _id: isIdValid,
-  }).unknown(true),
+  }),
 });

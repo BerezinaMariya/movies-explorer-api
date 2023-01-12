@@ -15,19 +15,19 @@ module.exports.validateUserRegInfo = celebrate({
     password: strReq,
     // имя пользователя. Это обязательное поле-строка от 2 до 30 символов.
     name: strReq.min(2).max(30),
-  }).unknown(true),
+  }),
 });
 
 module.exports.validateUserAuthInfo = celebrate({
   body: Joi.object().keys({
     email: emailReq,
     password: strReq,
-  }).unknown(true),
+  }),
 });
 
 module.exports.validateUserInfo = celebrate({
   body: Joi.object().keys({
     email: emailReq,
     name: strReq.min(2).max(30),
-  }).unknown(true),
+  }),
 });
