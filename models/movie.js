@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { URL_REGEX } = require('../utils/validators-consts');
+const { URL_REGEX, VALIDATION_ERROR_MESSAGE_URL } = require('../utils/validators-consts');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -29,7 +29,7 @@ const movieSchema = new mongoose.Schema({
       validator(value) {
         return URL_REGEX.test(value);
       },
-      message: 'Указан невалидный URL-адрес ссылки на постер к фильму',
+      message: VALIDATION_ERROR_MESSAGE_URL,
     },
   },
   trailerLink: {
@@ -39,7 +39,7 @@ const movieSchema = new mongoose.Schema({
       validator(value) {
         return URL_REGEX.test(value);
       },
-      message: 'Указан невалидный URL-адрес ссылки на трейлер фильма',
+      message: VALIDATION_ERROR_MESSAGE_URL,
     },
   },
   thumbnail: {
@@ -49,7 +49,7 @@ const movieSchema = new mongoose.Schema({
       validator(value) {
         return URL_REGEX.test(value);
       },
-      message: 'Указан невалидный URL-адрес ссылки на миниатюрное изображение постера к фильму',
+      message: VALIDATION_ERROR_MESSAGE_URL,
     },
   },
   owner: {

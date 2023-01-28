@@ -13,6 +13,7 @@ const {
   BAD_REQUEST_ERROR_MESSAGE, // 400
   NOT_FOUND_ERROR_MESSAGE, // 404
   CONFLICT_ERROR_MESSAGE, // 409
+  LOGOUT_MESSAGE,
 } = require('../utils/res-consts');
 
 const BadRequestError = require('../middlewares/errors/bad-request-error');
@@ -74,7 +75,7 @@ module.exports.login = (req, res, next) => {
 
 // Выход с сайта
 module.exports.logout = (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Вы покинули сайт' });
+  res.clearCookie('jwt').send({ message: LOGOUT_MESSAGE });
 };
 
 module.exports.getUserInfo = (req, res, next) => {

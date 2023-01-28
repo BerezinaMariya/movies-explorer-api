@@ -5,6 +5,7 @@ const {
   BAD_REQUEST_ERROR_MESSAGE, // 400
   FORBIDDEN_ERROR_MESSAGE, // 403
   NOT_FOUND_ERROR_MESSAGE, // 404
+  DELETE_MOVIE_MESSAGE,
 } = require('../utils/res-consts');
 
 const BadRequestError = require('../middlewares/errors/bad-request-error');
@@ -38,7 +39,7 @@ module.exports.deleteMovie = (req, res, next) => {
         return movie.remove();
       }
     })
-    .then(() => res.status(OK_STATUS).send({ message: 'Фильм удален' }))
+    .then(() => res.status(OK_STATUS).send({ message: DELETE_MOVIE_MESSAGE }))
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequestError(BAD_REQUEST_ERROR_MESSAGE));
