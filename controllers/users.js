@@ -13,6 +13,7 @@ const {
   BAD_REQUEST_ERROR_MESSAGE, // 400
   NOT_FOUND_ERROR_MESSAGE, // 404
   CONFLICT_ERROR_MESSAGE, // 409
+  LOGIN_MESSAGE,
   LOGOUT_MESSAGE,
 } = require('../utils/res-consts');
 
@@ -68,7 +69,7 @@ module.exports.login = (req, res, next) => {
         sameSite: false,
       });
 
-      res.status(OK_STATUS).send({ token });
+      res.status(OK_STATUS).send({ message: LOGIN_MESSAGE });
     })
     .catch(next);
 };

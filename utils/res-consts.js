@@ -19,6 +19,7 @@ const PAGE_404_ERROR_MESSAGE = 'Страница по указанному ма�
 
 // Ссобщения ответов
 const DELETE_MOVIE_MESSAGE = 'Фильм удалён!';
+const LOGIN_MESSAGE = 'Вы вошли на сайт!';
 const LOGOUT_MESSAGE = 'Вы покинули сайт!';
 
 module.exports = {
@@ -38,5 +39,6 @@ module.exports = {
   SERVER_ERROR_MESSAGE,
   PAGE_404_ERROR_MESSAGE,
   DELETE_MOVIE_MESSAGE,
+  LOGIN_MESSAGE,
   LOGOUT_MESSAGE,
 };
