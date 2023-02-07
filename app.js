@@ -33,7 +33,7 @@ mongoose.connect(
 );
 
 app.use(requestLogger);
-// app.use(limiter);
+app.use(limiter);
 app.use('/', routes);
 app.use(errorLogger);
 

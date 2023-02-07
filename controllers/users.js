@@ -43,7 +43,7 @@ module.exports.createUser = (req, res, next) => {
     })
     .catch((err) => {
       if (err.code === 11000) {
-        next(new ConflictError(CONFLICT_ERROR_MESSAGE));
+        next(new ConflictError({ message: CONFLICT_ERROR_MESSAGE }));
       } else {
         next(err);
       }
