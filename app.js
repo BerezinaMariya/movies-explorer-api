@@ -16,7 +16,7 @@ const routes = require('./routes');
 const { NODE_ENV, PROD_MONGO_BASE } = process.env;
 
 // Слушаем 3000 порт
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 
 const app = express();
 app.use(helmet());
