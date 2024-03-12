@@ -23,5 +23,5 @@
 ### Статус
 Завершён.
 
-### Приложение развернуто на облачном сервере
-https://movies-explorer.berez.nomoredomains.club/
+### Приложение развернуто на облачном сервере на поддомене
+https://api.movies-explorer.ru/
